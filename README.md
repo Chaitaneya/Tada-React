@@ -35,7 +35,7 @@ cd to-do
 
 2. Install dependencies
 ```bash
-npm install
+npm install framer-motion three vanta canvas-confetti lottie-react
 ```
 
 3. Start the development server
