@@ -1,1 +1,98 @@
 @import "tailwindcss";
+
+:root {
+  --text-primary: #2C3E50;
+  background: transparent;
+  --accent: #3498DB;
+  --secondary: #5dade2;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --shadow: 0 8px 32px 0 rgba(52, 152, 219, 0.3);
+  --border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: transparent;
+  transition: color 0.8s ease-in-out, background-color 0.8s ease-in-out;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  transition: background 0.8s ease-in-out, border 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+}
+
+/* For framer-motion reorder */
+.reorder-handle {
+  cursor: grab;
+}
+
+.reorder-handle:active {
+  cursor: grabbing;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--accent);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
